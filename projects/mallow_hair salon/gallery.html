@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Marlow & Thread</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .gallery-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+  @media (max-width:860px){ .gallery-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:540px){ .gallery-grid{ grid-template-columns:1fr; } }
+  .gallery-grid figure{ margin:0; position:relative; overflow:hidden; border-radius:14px; }
+  .gallery-grid img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease; }
+  .gallery-grid figure:hover img{ transform:scale(1.04); }
+  .gallery-grid figcaption{
+    position:absolute; left:0; right:0; bottom:0; padding:18px 18px 14px;
+    background:linear-gradient(0deg, rgba(46,33,26,0.35), transparent);
+    font-size:0.82rem; color:#F3EBDF; opacity:0; transition:opacity .25s;
+  }
+  .gallery-grid figure:hover figcaption{ opacity:1; }
+
+  .g-tall{ grid-row:span 2; }
+  .g-tall img{ aspect-ratio:3/4.4; }
+  .g-wide img{ aspect-ratio:4/3; }
+  .g-sq img{ aspect-ratio:1/1; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Marlow <span>&</span> Thread</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="navlinks nav-cta">Book Now</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true"><img src="gallery/gallery-hero.jpg" alt=""></div>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Gallery</span>
+    <h1>A few frames from a regular day.</h1>
+    <p class="lede">Cuts, colour, and the salon itself — no posed shots, just the work as it happens.</p>
+  </div>
+</section>
+
+<section style="padding-top:20px;">
+  <div class="wrap">
+    <div class="gallery-grid">
+      <figure class="g-tall">
+        <img src="gallery/g-01.jpg" alt="Stylist cutting a client's hair">
+        <figcaption>Precision cut, mid-appointment</figcaption>
+      </figure>
+      <figure class="g-wide">
+        <img src="gallery/g-02.jpg" alt="Finished balayage colour result">
+        <figcaption>Hand-painted balayage, finished</figcaption>
+      </figure>
+      <figure class="g-sq">
+        <img src="gallery/g-03.jpg" alt="Salon interior with warm light">
+        <figcaption>The salon floor</figcaption>
+      </figure>
+      <figure class="g-sq">
+        <img src="gallery/g-04.jpg" alt="Colour mixing station with bowls and brushes">
+        <figcaption>Mixing the colour</figcaption>
+      </figure>
+      <figure class="g-wide">
+        <img src="gallery/g-05.jpg" alt="Client receiving a scalp massage treatment">
+        <figcaption>Deep conditioning ritual</figcaption>
+      </figure>
+      <figure class="g-tall">
+        <img src="gallery/g-06.jpg" alt="Wide view of the salon chairs and mirrors">
+        <figcaption>Six chairs, big windows</figcaption>
+      </figure>
+      <figure class="g-sq">
+        <img src="gallery/g-07.jpg" alt="Close-up of finished blow-dry styling">
+        <figcaption>The finishing blow-dry</figcaption>
+      </figure>
+      <figure class="g-wide">
+        <img src="gallery/service-bridal.jpg" alt="Bridal hair styling close-up">
+        <figcaption>Bridal styling, day-of</figcaption>
+      </figure>
+      <figure class="g-sq">
+        <img src="gallery/about-hero.jpg" alt="Reception and waiting area of the salon">
+        <figcaption>The front room</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; width:100%;">
+    <a href="index.html" class="logo">Marlow <span style="color:var(--clay);">&</span> Thread</a>
+    <span>&copy; 2026 Marlow & Thread. Demo site for portfolio purposes.</span>
+  </div>
+</footer>
+
+</body>
+</html>

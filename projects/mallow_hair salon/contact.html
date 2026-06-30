@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Marlow & Thread</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:80px; }
+  @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:56px; } }
+  .contact-grid > div > p{ color:var(--grey); margin-bottom:40px; max-width:420px; }
+
+  .info-block{ margin-bottom:28px; }
+  .info-label{ font-size:0.76rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--clay-deep); margin-bottom:6px; }
+  .info-value{ font-size:1.05rem; }
+  .hours-row{ display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line); font-size:0.95rem; }
+  .hours-row span:first-child{ color:var(--grey); }
+
+  form{ display:flex; flex-direction:column; gap:20px; }
+  label{ font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--grey); margin-bottom:8px; display:block; }
+  input, select, textarea{
+    width:100%; background:transparent; border:none; border-bottom:1px solid var(--line);
+    color:var(--walnut); font-family:'Inter',sans-serif; font-size:1rem; padding:10px 0;
+    transition:border-color .25s;
+  }
+  input:focus, select:focus, textarea:focus{ outline:none; border-bottom-color:var(--clay); }
+  textarea{ resize:vertical; min-height:90px; }
+  select{ color:var(--walnut); }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:540px){ .form-row{ grid-template-columns:1fr; } }
+  .submit-btn{
+    align-self:flex-start; margin-top:8px; background:var(--clay); color:var(--cream); border:none;
+    padding:14px 32px; font-size:0.9rem; font-weight:600; letter-spacing:0.01em;
+    border-radius:30px; cursor:pointer; transition:background .25s; font-family:'Inter',sans-serif;
+  }
+  .submit-btn:hover{ background:var(--clay-deep); }
+  .form-note{ font-size:0.8rem; color:var(--grey); margin-top:4px; }
+
+  .map-block{ margin-top:60px; aspect-ratio:16/7; border-radius:14px; overflow:hidden; position:relative; }
+  .map-block img{ width:100%; height:100%; object-fit:cover; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Marlow <span>&</span> Thread</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a href="contact.html" class="navlinks nav-cta">Book Now</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true"><img src="gallery/contact-hero.jpg" alt=""></div>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Contact</span>
+    <h1>Come find a chair.</h1>
+    <p class="lede">Weekend slots go quickly — for first-time visits, we'd recommend booking a consultation a few days ahead.</p>
+  </div>
+</section>
+
+<section style="padding-top:30px;">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="section-label">Visit Us</div>
+      <h2 style="font-size:clamp(1.7rem,3.2vw,2.2rem); margin-bottom:20px; line-height:1.2; font-weight:500;">Find us on Marlow Lane.</h2>
+      <p>Look for the clay-coloured door and the row of plants out front. Street parking is easy after 10am.</p>
+
+      <div class="info-block">
+        <div class="info-label">Address</div>
+        <div class="info-value">22 Marlow Lane</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Phone</div>
+        <div class="info-value">(555) 042-7719</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Email</div>
+        <div class="info-value">hello@marlowandthread.example</div>
+      </div>
+
+      <div class="info-block" style="margin-top:40px;">
+        <div class="info-label" style="margin-bottom:14px;">Hours</div>
+        <div class="hours-row"><span>Tuesday – Friday</span><span>9:00am – 6:00pm</span></div>
+        <div class="hours-row"><span>Saturday</span><span>9:00am – 4:00pm</span></div>
+        <div class="hours-row"><span>Sunday – Monday</span><span>Closed</span></div>
+      </div>
+    </div>
+
+    <div>
+      <form onsubmit="return false;">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date">
+          </div>
+        </div>
+        <div>
+          <label for="service">Service</label>
+          <select id="service" name="service">
+            <option>Cut & Style</option>
+            <option>Colour & Balayage</option>
+            <option>Deep Conditioning Ritual</option>
+            <option>Bridal & Special Occasion</option>
+            <option>Children's Cut</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Notes</label>
+          <textarea id="message" name="message" placeholder="Anything we should know before your visit..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Request Appointment</button>
+        <p class="form-note">This is a demo form — submissions aren't sent anywhere yet.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="map-block">
+      <img src="gallery/map.jpg" alt="Street view near Marlow & Thread">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; width:100%;">
+    <a href="index.html" class="logo">Marlow <span style="color:var(--clay);">&</span> Thread</a>
+    <span>&copy; 2026 Marlow & Thread. Demo site for portfolio purposes.</span>
+  </div>
+</footer>
+
+</body>
+</html>

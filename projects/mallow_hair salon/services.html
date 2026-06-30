@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Marlow & Thread</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .service-list{ display:flex; flex-direction:column; }
+  .service-row{
+    display:grid; grid-template-columns:220px 1fr; gap:48px;
+    padding:44px 0; border-top:1px solid var(--line); align-items:start;
+  }
+  .service-list .service-row:last-child{ border-bottom:1px solid var(--line); }
+  @media (max-width:780px){ .service-row{ grid-template-columns:1fr; gap:20px; } }
+  .service-row img{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:12px; }
+  .service-name{ font-size:1.6rem; margin-bottom:12px; font-weight:500; }
+  .service-desc{ color:var(--grey); max-width:520px; margin-bottom:16px; }
+  .service-meta{ display:flex; gap:28px; font-size:0.85rem; color:var(--clay-deep); flex-wrap:wrap; }
+  .service-meta span{ display:flex; flex-direction:column; gap:2px; }
+  .service-meta b{ color:var(--walnut); font-weight:600; font-size:0.95rem; }
+
+  .cta-band{ background:var(--cream-2); text-align:center; }
+  .cta-band h2{ font-size:clamp(1.7rem,3vw,2.2rem); margin-bottom:18px; font-weight:500; }
+  .cta-band p{ color:var(--grey); max-width:480px; margin:0 auto 30px; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Marlow <span>&</span> Thread</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="navlinks nav-cta">Book Now</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true"><img src="gallery/services-hero.jpg" alt=""></div>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Services</span>
+    <h1>Cuts, colour, and a few rituals in between.</h1>
+    <p class="lede">Every service starts with a consultation — five honest minutes about what's working, what isn't, and what we're actually doing today.</p>
+  </div>
+</section>
+
+<section style="padding-top:40px;">
+  <div class="wrap">
+    <div class="service-list">
+
+      <div class="service-row">
+        <img src="gallery/service-cut.jpg" alt="Stylist cutting a client's hair">
+        <div>
+          <h3 class="service-name">Cut & Style</h3>
+          <p class="service-desc">A precision cut built around your natural texture and how you actually style your hair day to day, finished with a full blow-dry.</p>
+          <div class="service-meta">
+            <span><b>60–75 min</b>Duration</span>
+            <span><b>From $85</b>Starting price</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <img src="gallery/service-color.jpg" alt="Hand-painted balayage colour technique">
+        <div>
+          <h3 class="service-name">Colour & Balayage</h3>
+          <p class="service-desc">Hand-painted colour, full or partial, mixed in the room to match your skin tone and the season. Includes a gloss and blow-dry finish.</p>
+          <div class="service-meta">
+            <span><b>2–3 hours</b>Duration</span>
+            <span><b>From $180</b>Starting price</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <img src="gallery/service-treatment.jpg" alt="Deep conditioning hair treatment">
+        <div>
+          <h3 class="service-name">Deep Conditioning Ritual</h3>
+          <p class="service-desc">A restorative mask and 30-minute scalp massage, added to any appointment or booked as a stand-alone reset.</p>
+          <div class="service-meta">
+            <span><b>30 min</b>Duration</span>
+            <span><b>From $45</b>Starting price</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <img src="gallery/service-bridal.jpg" alt="Bridal hair styling session">
+        <div>
+          <h3 class="service-name">Bridal & Special Occasion</h3>
+          <p class="service-desc">A trial session followed by day-of styling, on-site or in-salon, for weddings, events, and anything worth getting dressed up for.</p>
+          <div class="service-meta">
+            <span><b>By appointment</b>Booking</span>
+            <span><b>Quote on request</b>Pricing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <img src="gallery/service-kids.jpg" alt="Stylist cutting a child's hair">
+        <div>
+          <h3 class="service-name">Children's Cuts</h3>
+          <p class="service-desc">Patient, unhurried cuts for younger clients, in the same chairs as everyone else — no separate kids' corner.</p>
+          <div class="service-meta">
+            <span><b>30–40 min</b>Duration</span>
+            <span><b>From $35</b>Starting price</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready to book?</h2>
+    <p>Weekend slots fill quickly — we'd recommend booking at least a few days ahead.</p>
+    <a href="contact.html" class="btn btn-primary">Book an Appointment</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; width:100%;">
+    <a href="index.html" class="logo">Marlow <span style="color:var(--clay);">&</span> Thread</a>
+    <span>&copy; 2026 Marlow & Thread. Demo site for portfolio purposes.</span>
+  </div>
+</footer>
+
+</body>
+</html>

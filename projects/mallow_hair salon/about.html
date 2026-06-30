@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Marlow & Thread</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-split{ display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+  @media (max-width:860px){ .about-split{ grid-template-columns:1fr; gap:48px; } }
+  .about-split img{ aspect-ratio:4/5; object-fit:cover; border-radius:14px; }
+  .about-split h2{ font-size:clamp(2rem,4vw,2.5rem); margin-bottom:22px; line-height:1.2; font-weight:500; }
+  .about-split p{ color:var(--grey); margin-bottom:18px; }
+  .stat-row{ display:flex; gap:44px; margin-top:36px; }
+  .stat-num{ font-family:'Fraunces',serif; font-size:2.1rem; color:var(--clay-deep); display:block; font-weight:500; }
+  .stat-label{ color:var(--grey); font-size:0.85rem; }
+
+  .values{ background:var(--cream-2); }
+  .value-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin-top:48px; }
+  @media (max-width:860px){ .value-grid{ grid-template-columns:1fr; } }
+  .value-card h4{ font-family:'Fraunces',serif; font-size:1.25rem; margin-bottom:12px; color:var(--clay-deep); font-weight:500; }
+  .value-card p{ color:var(--grey); font-size:0.95rem; }
+
+  .team-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px; }
+  @media (max-width:780px){ .team-row{ grid-template-columns:1fr; } }
+  .team-card img{ aspect-ratio:3/4; object-fit:cover; border-radius:14px; margin-bottom:18px; }
+  .team-card h4{ font-family:'Fraunces',serif; font-size:1.2rem; font-weight:500; }
+  .team-card .role{ color:var(--clay-deep); font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:10px; display:block; }
+  .team-card p{ color:var(--grey); font-size:0.92rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Marlow <span>&</span> Thread</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="navlinks nav-cta">Book Now</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true"><img src="gallery/about-hero.jpg" alt=""></div>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">About Us</span>
+    <h1>Six chairs, and a rule about really listening first.</h1>
+    <p class="lede">Marlow & Thread opened in 2019 with one idea: a salon doesn't need forty stylists to be great — it needs the right six.</p>
+  </div>
+</section>
+
+<section style="padding-top:30px;">
+  <div class="wrap about-split">
+    <div>
+      <div class="section-label">Our Story</div>
+      <h2>Started by a stylist tired of ten-minute consultations.</h2>
+      <p>Founder Iris Calloway spent eight years cutting hair in salons built for volume — fast turnovers, rushed consultations, the same three cuts repeated all day. Marlow & Thread is the opposite bet: fewer chairs, longer appointments, and a stylist who actually remembers what you said last time.</p>
+      <p>We named it after the street the original shop sat on, and the idea that good hair, like good thread, is about consistency — the same care, every single visit.</p>
+      <div class="stat-row">
+        <div><span class="stat-num">6</span><span class="stat-label">Chairs, total</span></div>
+        <div><span class="stat-num">2019</span><span class="stat-label">Opened</span></div>
+        <div><span class="stat-num">5★</span><span class="stat-label">Average client rating</span></div>
+      </div>
+    </div>
+    <img src="gallery/about-portrait.jpg" alt="Stylist working with a client in the salon">
+  </div>
+</section>
+
+<section class="values">
+  <div class="wrap">
+    <div class="section-label">What We Believe</div>
+    <h2 style="font-size:clamp(1.7rem,3.2vw,2.3rem); max-width:560px; font-weight:500;">A few things we won't compromise on.</h2>
+    <div class="value-grid">
+      <div class="value-card">
+        <h4>The consultation matters</h4>
+        <p>No appointment starts with scissors. It starts with five honest minutes about what you actually want.</p>
+      </div>
+      <div class="value-card">
+        <h4>Hand-mixed, every time</h4>
+        <p>No pre-mixed colour from a chart. Every formula is built in the room, for your hair, that day.</p>
+      </div>
+      <div class="value-card">
+        <h4>Small on purpose</h4>
+        <p>Six chairs means six stylists who know your hair history — not a rotating cast of strangers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">The Team</div>
+    <h2 style="font-size:clamp(1.7rem,3.2vw,2.3rem); margin-bottom:48px; max-width:560px; font-weight:500;">The people behind the chairs.</h2>
+    <div class="team-row">
+      <div class="team-card">
+        <img src="gallery/team-iris.jpg" alt="Portrait of Iris Calloway">
+        <span class="role">Founder, Senior Stylist</span>
+        <h4>Iris Calloway</h4>
+        <p>Eight years cutting before opening Marlow & Thread in 2019. Specialises in precision cutting.</p>
+      </div>
+      <div class="team-card">
+        <img src="gallery/team-noah.jpg" alt="Portrait of Noah Reyes">
+        <span class="role">Colour Specialist</span>
+        <h4>Noah Reyes</h4>
+        <p>Leads the colour bar and trains the rest of the team on hand-painted technique.</p>
+      </div>
+      <div class="team-card">
+        <img src="gallery/team-bea.jpg" alt="Portrait of Bea Holt">
+        <span class="role">Stylist</span>
+        <h4>Bea Holt</h4>
+        <p>Joined in 2022, and runs our bridal and special occasion bookings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; width:100%;">
+    <a href="index.html" class="logo">Marlow <span style="color:var(--clay);">&</span> Thread</a>
+    <span>&copy; 2026 Marlow & Thread. Demo site for portfolio purposes.</span>
+  </div>
+</footer>
+
+</body>
+</html>

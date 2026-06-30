@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Technical Services — Hybrid & Automotive Repairs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black: #0D0D0F;
+    --black-2: #161619;
+    --blue: #3B2FF0;
+    --blue-deep: #2A20B8;
+    --white: #FFFFFF;
+    --steel: #9A9AA3;
+    --line: rgba(255,255,255,0.1);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(13,13,15,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 32px; max-width:1180px; margin:0 auto;
+  }
+  .nav-brand{ display:flex; align-items:center; gap:12px; }
+  .nav-brand img{ height:42px; width:auto; }
+  .nav-brand-text{ font-weight:800; font-size:0.95rem; letter-spacing:0.02em; line-height:1.2; }
+  .nav-brand-text span{ display:block; font-weight:500; font-size:0.7rem; color:var(--steel); letter-spacing:0.1em; }
+  .navlinks{ display:flex; gap:36px; font-size:0.9rem; font-weight:500; }
+  .navlinks a{ color:var(--steel); transition:color .25s; }
+  .navlinks a:hover, .navlinks a:focus-visible{ color:var(--white); }
+  @media (max-width:780px){ .navlinks{ display:none; } }
+  .nav-cta{
+    background:var(--blue); color:var(--white) !important;
+    padding:11px 24px; border-radius:4px; font-size:0.85rem; font-weight:700;
+  }
+  .nav-cta:hover{ background:var(--blue-deep); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--blue); outline-offset:3px; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; min-height:100vh; display:flex; align-items:center;
+    overflow:hidden; padding:120px 0 60px;
+  }
+  .hero-split{
+    position:absolute; inset:0; z-index:0;
+    background:
+      linear-gradient(115deg, var(--black) 0%, var(--black) 48%, var(--blue) 52%, var(--blue) 100%);
+  }
+  .hero-split::before{
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05), transparent 35%),
+      radial-gradient(circle at 85% 80%, rgba(255,255,255,0.04), transparent 40%);
+  }
+  .hero-texture{
+    position:absolute; inset:0; opacity:0.18; mix-blend-mode:overlay;
+    background-image:url('gallery/texture-leather.jpg');
+    background-size:cover; background-position:center;
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center;
+    width:100%;
+  }
+  @media (max-width:900px){ .hero-inner{ grid-template-columns:1fr; } }
+
+  .hero-car{
+    position:relative;
+  }
+  .hero-car img{ width:100%; max-width:640px; filter:drop-shadow(0 30px 50px rgba(0,0,0,0.5)); }
+
+  .hero-content{ position:relative; }
+  .eyebrow{
+    color:var(--white); font-size:0.78rem; letter-spacing:0.16em;
+    text-transform:uppercase; margin-bottom:18px; display:inline-block;
+    background:rgba(255,255,255,0.12); padding:6px 14px; border-radius:30px;
+  }
+  .hero-content h1{
+    font-size:clamp(2rem, 3.6vw, 2.8rem); font-weight:800; line-height:1.15;
+    margin-bottom:20px;
+  }
+  .hero-content p{ color:rgba(255,255,255,0.85); font-size:1.02rem; max-width:420px; margin-bottom:30px; }
+
+  .service-card{
+    background:rgba(13,13,15,0.35);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:10px;
+    padding:32px 30px;
+  }
+  .service-card h2{ font-size:1.5rem; font-weight:800; margin-bottom:20px; letter-spacing:0.01em; }
+  .service-list{ list-style:none; display:flex; flex-direction:column; gap:13px; }
+  .service-list li{ display:flex; align-items:center; gap:12px; font-size:1rem; font-weight:500; }
+  .service-list li::before{
+    content:''; width:7px; height:7px; border-radius:50%; background:var(--white); flex-shrink:0;
+  }
+
+  .hero-contact-bar{
+    position:relative; z-index:2;
+    margin-top:56px;
+    display:flex; gap:36px; flex-wrap:wrap; align-items:center;
+  }
+  .contact-pill{ display:flex; align-items:center; gap:12px; }
+  .contact-icon{
+    width:42px; height:42px; border-radius:50%; background:rgba(13,13,15,0.5);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    border:1px solid rgba(255,255,255,0.25);
+  }
+  .contact-icon svg{ width:19px; height:19px; }
+  .contact-text{ font-weight:700; font-size:0.95rem; line-height:1.3; }
+  .contact-text small{ display:block; font-weight:500; color:rgba(255,255,255,0.7); font-size:0.78rem; }
+
+  /* ---------- SECTION LABEL ---------- */
+  .section-label{
+    display:flex; align-items:center; gap:16px;
+    color:var(--blue); font-size:0.8rem; letter-spacing:0.16em;
+    text-transform:uppercase; margin-bottom:18px; font-weight:700;
+  }
+  .section-label::before{ content:''; width:32px; height:2px; background:var(--blue); }
+
+  /* ---------- ABOUT ---------- */
+  .about{ padding:120px 0; border-top:1px solid var(--line); }
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; gap:40px; } }
+  .about h2{ font-size:clamp(1.9rem,3.4vw,2.5rem); font-weight:800; margin-bottom:22px; line-height:1.2; }
+  .about p{ color:var(--steel); margin-bottom:18px; font-size:1.02rem; }
+  .stat-row{ display:flex; gap:48px; margin-top:36px; }
+  .stat-num{ font-size:2.1rem; font-weight:800; color:var(--blue); display:block; }
+  .stat-label{ color:var(--steel); font-size:0.85rem; }
+  .about-img{ aspect-ratio:4/5; border-radius:10px; overflow:hidden; background:var(--black-2); border:1px solid var(--line); }
+  .about-img img{ width:100%; height:100%; object-fit:cover; }
+
+  /* ---------- SERVICES DETAIL ---------- */
+  .services-detail{ padding:120px 0; border-top:1px solid var(--line); background:var(--black-2); }
+  .services-detail h2{ font-size:clamp(1.9rem,3.4vw,2.5rem); font-weight:800; margin-bottom:54px; max-width:600px; }
+  .svc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  @media (max-width:860px){ .svc-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .svc-grid{ grid-template-columns:1fr; } }
+  .svc-card{
+    background:var(--black); border:1px solid var(--line); border-radius:10px;
+    padding:30px 26px; transition:border-color .25s;
+  }
+  .svc-card:hover{ border-color:var(--blue); }
+  .svc-icon{
+    width:48px; height:48px; border-radius:10px; background:var(--blue);
+    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+  }
+  .svc-icon svg{ width:24px; height:24px; }
+  .svc-card h3{ font-size:1.1rem; font-weight:700; margin-bottom:10px; }
+  .svc-card p{ color:var(--steel); font-size:0.92rem; }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ padding:120px 0; border-top:1px solid var(--line); }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px; }
+  @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:48px; } }
+  .contact h2{ font-size:clamp(1.9rem,3.4vw,2.5rem); font-weight:800; margin-bottom:20px; line-height:1.2; }
+  .contact > div > p{ color:var(--steel); margin-bottom:40px; max-width:420px; }
+
+  .info-block{ display:flex; align-items:flex-start; gap:16px; margin-bottom:26px; }
+  .info-icon{
+    width:44px; height:44px; border-radius:10px; background:var(--blue);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .info-icon svg{ width:20px; height:20px; }
+  .info-label{ font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--steel); margin-bottom:4px; }
+  .info-value{ font-size:1.05rem; font-weight:600; }
+
+  form{ display:flex; flex-direction:column; gap:20px; background:var(--black-2); border:1px solid var(--line); border-radius:10px; padding:32px; }
+  label{ font-size:0.8rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--steel); margin-bottom:8px; display:block; }
+  input, textarea{
+    width:100%; background:var(--black); border:1px solid var(--line); border-radius:6px;
+    color:var(--white); font-family:'Inter',sans-serif; font-size:1rem; padding:12px 14px;
+    transition:border-color .25s;
+  }
+  input:focus, textarea:focus{ outline:none; border-color:var(--blue); }
+  textarea{ resize:vertical; min-height:90px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:480px){ .form-row{ grid-template-columns:1fr; } }
+  .submit-btn{
+    background:var(--blue); color:var(--white); border:none;
+    padding:14px 30px; font-size:0.92rem; font-weight:700; letter-spacing:0.01em;
+    border-radius:6px; cursor:pointer; transition:background .25s; font-family:'Inter',sans-serif;
+  }
+  .submit-btn:hover{ background:var(--blue-deep); }
+  .form-note{ font-size:0.8rem; color:var(--steel); margin-top:-6px; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line); padding:40px 0;
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:16px; color:var(--steel); font-size:0.85rem;
+  }
+  .footer-brand{ display:flex; align-items:center; gap:10px; }
+  .footer-brand img{ height:32px; width:auto; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home" class="nav-brand">
+      <img src="gallery/logo.png" alt="Pro Technical Services logo">
+      <span class="nav-brand-text">PRO TECHNICAL<span>SERVICES</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </nav>
+</header>
+
+<!-- HOME / HERO -->
+<section class="hero" id="home">
+  <div class="hero-split" aria-hidden="true"></div>
+  <div class="hero-texture" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-car">
+        <img src="gallery/car-hero.png" alt="Hybrid vehicle serviced by Pro Technical Services">
+      </div>
+      <div class="hero-content">
+        <span class="eyebrow">Hybrid & Automotive Specialists</span>
+        <h1>Hybrid vehicle care, done right the first time.</h1>
+        <p>Pro Technical Services repairs, diagnoses, and maintains hybrid and conventional vehicles — from non-starting issues to full vehicle security and tracking installs.</p>
+        <div class="service-card">
+          <h2>Services</h2>
+          <ul class="service-list">
+            <li>Hybrid vehicle services</li>
+            <li>Automotive repairs</li>
+            <li>Non starting vehicles</li>
+            <li>Immobilizer reset</li>
+            <li>Vehicle security</li>
+            <li>Car tracking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-contact-bar">
+      <a href="https://wa.me/263772707956" class="contact-pill" style="text-decoration:none; color:inherit;">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </span>
+        <span class="contact-text">+263 772 707 956<small>WhatsApp</small></span>
+      </a>
+      <a href="tel:+263772707956" class="contact-pill" style="text-decoration:none; color:inherit;">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <span class="contact-text">+263 772 707 956 / +263 713 635 961<small>Call us</small></span>
+      </a>
+      <a href="https://maps.google.com/?q=Newlands,Harare" target="_blank" rel="noopener" class="contact-pill" style="text-decoration:none; color:inherit;">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="contact-text">Newlands, Harare<small>Location</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-label">About Us</div>
+      <h2>Trusted hybrid and automotive specialists in Harare.</h2>
+      <p>Pro Technical Services is run by A. Semu, Director, and a team built around one focus: getting hybrid and conventional vehicles back on the road properly — not just patched up.</p>
+      <p>From diagnosing non-starting vehicles to resetting immobilizers and fitting vehicle tracking and security systems, every job is handled with the same technical care, whether it's a quick fix or a full hybrid system repair.</p>
+      <div class="stat-row">
+        <div><span class="stat-num">6+</span><span class="stat-label">Core services</span></div>
+        <div><span class="stat-num">100%</span><span class="stat-label">Hybrid-capable</span></div>
+        <div><span class="stat-num">1</span><span class="stat-label">Workshop, Newlands</span></div>
+      </div>
+    </div>
+    <div class="about-img">
+      <img src="gallery/hybrid diagnosis.jpg" alt="Pro Technical Services workshop and vehicle bay">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-detail" id="services">
+  <div class="wrap">
+    <div class="section-label">What We Offer</div>
+    <h2>Six core services, all under one roof.</h2>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <span class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        </span>
+        <h3>Hybrid Vehicle Services</h3>
+        <p>Diagnostics, repairs, and maintenance for hybrid drive systems and batteries.</p>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2M9 17h6"/></svg>
+        </span>
+        <h3>Automotive Repairs</h3>
+        <p>General mechanical repairs across most makes and models, conventional and hybrid.</p>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </span>
+        <h3>Non Starting Vehicles</h3>
+        <p>Fast, accurate diagnosis for vehicles that won't start — electrical, fuel, or ignition faults.</p>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        </span>
+        <h3>Immobilizer Reset</h3>
+        <p>Immobilizer diagnosis and reset, getting locked-out and faulted vehicles running again.</p>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
+        </span>
+        <h3>Vehicle Security</h3>
+        <p>Security system installation and repair to keep your vehicle protected.</p>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
+        </span>
+        <h3>Car Tracking</h3>
+        <p>GPS tracking installation for added peace of mind and recovery support.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="section-label">Get In Touch</div>
+      <h2>Book a service or ask a question.</h2>
+      <p>Reach out by phone, WhatsApp, or the form — we'll get back to you with availability and a quote.</p>
+
+      <a href="tel:+263772707956" class="info-block" style="text-decoration:none; color:inherit;">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <div>
+          <div class="info-label">Phone</div>
+          <div class="info-value">+263 772 707 956 &nbsp;/&nbsp; +263 713 635 961</div>
+        </div>
+      </a>
+
+      <a href="https://wa.me/263772707956" class="info-block" style="text-decoration:none; color:inherit;">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </span>
+        <div>
+          <div class="info-label">WhatsApp</div>
+          <div class="info-value">+263 772 707 956</div>
+        </div>
+      </a>
+
+      <a href="https://maps.google.com/?q=Newlands,Harare" target="_blank" rel="noopener" class="info-block" style="text-decoration:none; color:inherit;">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <div>
+          <div class="info-label">Location</div>
+          <div class="info-value">Newlands, Harare</div>
+        </div>
+      </a>
+    </div>
+
+    <div>
+      <form onsubmit="return false;">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+        </div>
+        <div>
+          <label for="vehicle">Vehicle Make & Model</label>
+          <input type="text" id="vehicle" name="vehicle" placeholder="e.g. Toyota Yaris Hybrid">
+        </div>
+        <div>
+          <label for="message">What do you need help with?</label>
+          <textarea id="message" name="message" placeholder="Describe the issue or service you need..."></textarea>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; width:100%;">
+    <div class="footer-brand">
+      <img src="gallery/logo.png" alt="Pro Technical Services logo">
+      <span>Pro Technical Services</span>
+    </div>
+    <span>&copy; 2026 Pro Technical Services. Demo site for portfolio purposes.</span>
+  </div>
+</footer>
+
+</body>
+</html>
