@@ -1,0 +1,21 @@
+<svg width="420" height="320" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="clayGradStack" x1="0%" y1="100%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#A8633F"/>
+    <stop offset="100%" stop-color="#C17A56"/>
+  </linearGradient>
+</defs>
+
+<g transform="translate(152,16) scale(1)" fill="none" stroke="url(#clayGradStack)" stroke-width="6" stroke-linecap="round">
+  <path d="M8 60 C 8 28, 38 8, 64 8 C 92 8, 116 30, 116 58 C 116 86, 92 108, 64 108 C 44 108, 28 98, 20 82"
+        stroke-dasharray="14 10"/>
+  <circle cx="64" cy="58" r="6" fill="#2E211A" stroke="none"/>
+</g>
+
+<text x="210" y="208" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="38" font-weight="500" fill="#2E211A">
+  <tspan>Marlow </tspan><tspan font-style="italic" font-weight="400" fill="#C17A56">&amp; </tspan><tspan>Thread</tspan>
+</text>
+
+<text x="210" y="240" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="3" fill="#8C7F72">HAIR SALON</text>
+
+</svg>

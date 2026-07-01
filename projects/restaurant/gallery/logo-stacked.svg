@@ -1,0 +1,39 @@
+<svg width="360" height="320" viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="emberGradStack" x1="0%" y1="100%" x2="0%" y2="0%">
+    <stop offset="0%" stop-color="#7C3A1D"/>
+    <stop offset="50%" stop-color="#D9622B"/>
+    <stop offset="100%" stop-color="#E8895C"/>
+  </linearGradient>
+</defs>
+
+<g transform="translate(138,20) scale(1.05)">
+  <path d="
+    M 45 0
+    C 70 28, 84 50, 84 72
+    C 84 100, 64 120, 40 120
+    C 16 120, -4 100, -4 74
+    C -4 56, 6 42, 18 30
+    C 16 44, 22 54, 32 58
+    C 28 44, 32 26, 45 0
+    Z"
+    fill="url(#emberGradStack)"/>
+  <path d="
+    M 40 36
+    C 54 54, 60 68, 60 82
+    C 60 98, 48 108, 36 108
+    C 24 108, 12 98, 12 82
+    C 12 72, 17 64, 23 58
+    C 22 66, 26 72, 31 74
+    C 29 66, 32 54, 40 36
+    Z"
+    fill="#1A1612" opacity="0.9"/>
+</g>
+
+<text x="180" y="220" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="46" font-weight="600" fill="#1A1612">
+  <tspan>Ember </tspan><tspan font-style="italic" font-weight="500" fill="#D9622B">&amp; </tspan><tspan>Salt</tspan>
+</text>
+
+<text x="180" y="252" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" letter-spacing="3" fill="#7A746B">LIVE&#8211;FIRE KITCHEN</text>
+
+</svg>

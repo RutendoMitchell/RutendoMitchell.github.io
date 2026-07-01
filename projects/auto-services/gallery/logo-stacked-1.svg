@@ -1,0 +1,22 @@
+<svg width="420" height="320" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="hybridBlueStack" x1="0%" y1="100%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2A20B8"/>
+    <stop offset="100%" stop-color="#3B2FF0"/>
+  </linearGradient>
+</defs>
+
+<g transform="translate(144,16)">
+  <circle cx="66" cy="66" r="66" fill="#0D0D0F"/>
+  <circle cx="66" cy="66" r="66" fill="none" stroke="url(#hybridBlueStack)" stroke-width="3.5"/>
+  <path d="M76 24 L42 74 L62 74 L56 110 L94 58 L72 58 Z" fill="url(#hybridBlueStack)"/>
+</g>
+
+<text x="210" y="222" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800" fill="#1A1A1E" letter-spacing="0.3">
+  HYBRID PRO
+</text>
+<text x="210" y="250" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#6B6B73" letter-spacing="2.2">
+  TECHNICAL SERVICES
+</text>
+
+</svg>

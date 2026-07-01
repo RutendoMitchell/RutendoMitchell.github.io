@@ -1,0 +1,27 @@
+<svg width="420" height="320" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="kimboNavyStack" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#234A73"/>
+    <stop offset="100%" stop-color="#1B3A5C"/>
+  </linearGradient>
+</defs>
+
+<g transform="translate(146,16)">
+  <path d="M70 6 L132 64 L112 64 L70 26 L28 64 L8 64 Z" fill="url(#kimboNavyStack)"/>
+  <path d="M70 34 L118 78 L98 78 L70 52 L42 78 L22 78 Z" fill="#C0492E"/>
+  <path d="M70 84
+           C 84 100, 90 112, 90 122
+           C 90 136, 80 146, 70 146
+           C 60 146, 50 136, 50 122
+           C 50 112, 56 100, 70 84 Z"
+        fill="url(#kimboNavyStack)"/>
+</g>
+
+<text x="210" y="222" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" fill="#1B3A5C" letter-spacing="0.5">
+  KIMBO
+</text>
+<text x="210" y="252" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#5C6B73" letter-spacing="2">
+  ROOFING &amp; WATERPROOFING
+</text>
+
+</svg>
