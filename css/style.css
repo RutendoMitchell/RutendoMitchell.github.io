@@ -489,4 +489,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     color: var(--navy-900);
   }
   .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+  /* ---------- WhatsApp floating button ---------- */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
 }
